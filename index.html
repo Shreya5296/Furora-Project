@@ -3,22 +3,42 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>FURORA | Your Mythical Companion</title>
+
   <style>
-    * { box-sizing: border-box; }
+    * {
+      box-sizing: border-box;
+    }
 
     body {
       margin: 0;
       min-height: 100vh;
       font-family: "Trebuchet MS", "Segoe UI", sans-serif;
       color: #26324a;
+
       background:
-        radial-gradient(circle at 15% 15%, rgba(255,255,255,.95) 0 4%, transparent 5%),
-        radial-gradient(circle at 85% 20%, rgba(255,255,255,.8) 0 3%, transparent 4%),
-        linear-gradient(135deg, #eef8ff 0%, #f8f2ff 48%, #fff6ec 100%);
+        radial-gradient(
+          circle at 15% 15%,
+          rgba(255,255,255,.95) 0 4%,
+          transparent 5%
+        ),
+        radial-gradient(
+          circle at 85% 20%,
+          rgba(255,255,255,.8) 0 3%,
+          transparent 4%
+        ),
+        linear-gradient(
+          135deg,
+          #eef8ff 0%,
+          #f8f2ff 48%,
+          #fff6ec 100%
+        );
+
       display: flex;
       justify-content: center;
       align-items: center;
+
       padding: 32px 18px;
       overflow-x: hidden;
     }
@@ -55,95 +75,175 @@
 
     .card {
       background: rgba(255,255,255,.78);
+
       border: 1px solid rgba(255,255,255,.95);
       border-radius: 34px;
+
       padding: 58px 42px 40px;
-      box-shadow: 0 24px 70px rgba(66, 74, 120, .14);
+
+      box-shadow:
+        0 24px 70px rgba(66, 74, 120, .14);
+
       backdrop-filter: blur(18px);
+
       text-align: center;
     }
+
+    /* FURORA LOGO */
+
+    .brand-logo {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      margin-bottom: 22px;
+    }
+
+    .brand-logo img {
+      display: block;
+
+      width: min(620px, 88%);
+      height: auto;
+
+      max-height: 190px;
+
+      object-fit: contain;
+
+      filter:
+        drop-shadow(
+          0 10px 18px rgba(66, 74, 120, .12)
+        );
+    }
+
+    /* TOP BADGE */
 
     .badge {
       display: inline-flex;
       align-items: center;
       gap: 8px;
+
       padding: 9px 16px;
+
       border-radius: 999px;
+
       background: #ffffff;
-      box-shadow: 0 8px 22px rgba(66,74,120,.10);
+
+      box-shadow:
+        0 8px 22px rgba(66,74,120,.10);
+
       font-size: 12px;
       font-weight: 800;
+
       letter-spacing: 1.6px;
+
       text-transform: uppercase;
     }
 
-    .sparkle { font-size: 16px; }
-
-    h1 {
-      margin: 20px 0 4px;
-      font-size: clamp(54px, 10vw, 94px);
-      line-height: .9;
-      letter-spacing: -4px;
-      font-weight: 900;
-      background: linear-gradient(90deg, #4b7bec, #8c69df, #ef7ba8, #f49a5b);
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
+    .sparkle {
+      font-size: 16px;
     }
 
+    /* TAGLINE */
+
     .tagline {
-      margin: 16px auto 0;
+      margin: 20px auto 0;
+
       max-width: 620px;
+
       font-size: clamp(18px, 2.5vw, 24px);
+
       line-height: 1.45;
+
       font-weight: 700;
     }
 
+    /* DESCRIPTION */
+
     .sub {
       margin: 10px auto 34px;
+
       max-width: 650px;
+
       color: #68738a;
+
       font-size: 15px;
+
       line-height: 1.65;
     }
 
+    /* FILE BUTTONS */
+
     .portal {
       display: grid;
-      grid-template-columns: repeat(5, 1fr);
+
+      grid-template-columns:
+        repeat(5, 1fr);
+
       gap: 13px;
+
       margin-top: 28px;
     }
 
     .button {
       min-height: 112px;
+
       text-decoration: none;
+
       color: #26324a;
-      background: rgba(255,255,255,.92);
+
+      background:
+        rgba(255,255,255,.92);
+
       border: 1px solid #e9eaf2;
+
       border-radius: 20px;
+
       padding: 18px 12px;
+
       display: flex;
+
       flex-direction: column;
+
       align-items: center;
+
       justify-content: center;
+
       gap: 9px;
-      box-shadow: 0 10px 26px rgba(65, 72, 115, .08);
-      transition: transform .22s ease, box-shadow .22s ease;
+
+      box-shadow:
+        0 10px 26px rgba(65, 72, 115, .08);
+
+      transition:
+        transform .22s ease,
+        box-shadow .22s ease;
     }
 
     .button:hover {
       transform: translateY(-5px);
-      box-shadow: 0 16px 34px rgba(65, 72, 115, .15);
+
+      box-shadow:
+        0 16px 34px rgba(65, 72, 115, .15);
     }
+
+    /* ICON */
 
     .icon {
       width: 42px;
       height: 42px;
+
       display: grid;
       place-items: center;
+
       border-radius: 14px;
+
       font-size: 21px;
-      background: linear-gradient(135deg, #edf4ff, #f8edff);
+
+      background:
+        linear-gradient(
+          135deg,
+          #edf4ff,
+          #f8edff
+        );
     }
 
     .button strong {
@@ -152,105 +252,297 @@
 
     .button span {
       color: #8991a4;
+
       font-size: 11px;
     }
+
+    /* INFORMATION NOTE */
 
     .note {
       margin: 30px auto 0;
+
       padding: 14px 18px;
+
       max-width: 690px;
+
       border-radius: 16px;
-      background: rgba(247,249,255,.85);
+
+      background:
+        rgba(247,249,255,.85);
+
       color: #6d768b;
+
       font-size: 12px;
+
       line-height: 1.55;
     }
 
+    /* FOOTER */
+
     footer {
       margin-top: 28px;
+
       color: #9aa1b1;
+
       font-size: 11px;
+
       letter-spacing: .5px;
     }
 
+    /* TABLET */
+
     @media (max-width: 760px) {
-      .card { padding: 42px 22px 30px; }
-      .portal { grid-template-columns: repeat(2, 1fr); }
-      .button:last-child { grid-column: span 2; }
+
+      .card {
+        padding: 42px 22px 30px;
+      }
+
+      .portal {
+        grid-template-columns:
+          repeat(2, 1fr);
+      }
+
+      .button:last-child {
+        grid-column: span 2;
+      }
+
+      .brand-logo img {
+        width: min(520px, 94%);
+      }
     }
 
+    /* MOBILE */
+
     @media (max-width: 430px) {
-      .portal { grid-template-columns: 1fr; }
-      .button:last-child { grid-column: auto; }
-      h1 { letter-spacing: -2px; }
+
+      .portal {
+        grid-template-columns: 1fr;
+      }
+
+      .button:last-child {
+        grid-column: auto;
+      }
+
+      .brand-logo img {
+        width: 100%;
+        max-height: 130px;
+      }
+
+      .card {
+        border-radius: 26px;
+        padding: 34px 18px 28px;
+      }
     }
   </style>
 </head>
 
+
 <body>
+
   <main class="shell">
+
     <section class="card">
 
-      <div class="badge">
-        <span class="sparkle">✦</span>
-        AI Venture Creator Challenge
+
+      <!-- =========================
+           FURORA LOGO
+           Keep Shreya_Logo.png
+           in the same GitHub folder
+           ========================= -->
+
+      <div class="brand-logo">
+
+        <img
+          src="Shreya_Logo.png"
+          alt="FURORA logo"
+        >
+
       </div>
 
-      <h1>FURORA</h1>
+
+      <!-- =========================
+           CHALLENGE BADGE
+           ========================= -->
+
+      <div class="badge">
+
+        <span class="sparkle">✦</span>
+
+        AI Venture Creator Challenge
+
+      </div>
+
+
+      <!-- =========================
+           TAGLINE
+           ========================= -->
 
       <div class="tagline">
+
         A mythical companion, made just for you.
+
       </div>
 
+
+      <!-- =========================
+           DESCRIPTION
+           ========================= -->
+
       <p class="sub">
-        Welcome to FURORA — a futuristic pet experience where personality,
-        imagination and technology come together to create a companion that grows with you.
+
+        Welcome to FURORA — a futuristic pet experience
+        where personality, imagination and technology come
+        together to create a companion that grows with you.
+
       </p>
+
+
+      <!-- =========================
+           PROJECT BUTTONS
+           ========================= -->
 
       <div class="portal">
 
-        <a class="button" href="Shreya_Poster.png" target="_blank">
-          <div class="icon">🎨</div>
-          <strong>Brand Poster</strong>
-          <span>See the world of FURORA</span>
+
+        <!-- BRAND POSTER -->
+
+        <a
+          class="button"
+          href="Shreya_Poster.png"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+
+          <div class="icon">
+            🎨
+          </div>
+
+          <strong>
+            Brand Poster
+          </strong>
+
+          <span>
+            See the world of FURORA
+          </span>
+
         </a>
 
-        <a class="button" href="Shreya_Flyer.png" target="_blank">
-          <div class="icon">✨</div>
-          <strong>Product Flyer</strong>
-          <span>Discover the experience</span>
+
+        <!-- PRODUCT FLYER -->
+
+        <a
+          class="button"
+          href="Shreya_Flyer.png"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+
+          <div class="icon">
+            ✨
+          </div>
+
+          <strong>
+            Product Flyer
+          </strong>
+
+          <span>
+            Discover the experience
+          </span>
+
         </a>
 
-        <a class="button" href="Shreya_Proposal.pdf" target="_blank">
-          <div class="icon">📖</div>
-          <strong>Business Proposal</strong>
-          <span>Explore the idea</span>
+
+        <!-- BUSINESS PROPOSAL -->
+
+        <a
+          class="button"
+          href="Shreya_Proposal.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+
+          <div class="icon">
+            📖
+          </div>
+
+          <strong>
+            Business Proposal
+          </strong>
+
+          <span>
+            Explore the idea
+          </span>
+
         </a>
 
-        <a class="button" href="https://canva.link/1be663x5w82esdr" target="_blank" rel="noopener noreferrer">
-          <div class="icon">🎬</div>
-          <strong>Video Ad</strong>
-          <span>Watch FURORA come alive</span>
+
+        <!-- VIDEO AD
+             Public Canva link
+        -->
+
+        <a
+          class="button"
+          href="https://canva.link/1be663x5w82esdr"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+
+          <div class="icon">
+            🎬
+          </div>
+
+          <strong>
+            Video Ad
+          </strong>
+
+          <span>
+            Watch FURORA come alive
+          </span>
+
         </a>
 
-        <a class="button" href="Shreya_AI_Final_Task.zip" target="_blank">
-          <div class="icon">🚀</div>
-          <strong>Complete Submission</strong>
-          <span>ZIP + Prompt Log</span>
+
+        <!-- COMPLETE SUBMISSION ZIP -->
+
+        <a
+          class="button"
+          href="Shreya_AI_Final_Task.zip"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+
+          <div class="icon">
+            🚀
+          </div>
+
+          <strong>
+            Complete Submission
+          </strong>
+
+          <span>
+            ZIP + Prompt Log
+          </span>
+
         </a>
+
 
       </div>
 
-      <div class="note">
-        All project files are packaged together in the final submission ZIP.
-        For the best experience, keep this HTML file and the linked assets in the same folder.
-      </div>
+
+      <!-- =========================
+           FOOTER
+           ========================= -->
 
       <footer>
+
         FURORA · Imagine a companion that grows with you.
+
       </footer>
 
+
     </section>
+
   </main>
+
 </body>
 </html>
